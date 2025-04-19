@@ -13,4 +13,7 @@ module.exports = {
   ALIVE_MSG: process.env.ALIVE_MSG || "Hello , I am alive now!!\n\n😎𝐌𝐚𝐝𝐞 𝐛𝐲 C_Y_B_E_R😎",
   AUTO_READ_STATUS: process.env. AUTO_READ_STATUS || "false",
   MODE: process.env.MODE || "private",
+  AUTO_VOICE: process.env.AUTO_VOICE || "true",
+  AUTO_STICKER: process.env.AUTO_STICKER || "true",
+  AUTO_REPLY: process.env.AUTO_REPLY || "true",
 };
