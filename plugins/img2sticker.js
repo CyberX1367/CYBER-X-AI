@@ -6,6 +6,7 @@ cmd(
   {
     pattern: "sticker",
     alias: ["s", "stick"],
+    react: "🧩",
     desc: "Convert an image to a sticker",
     category: "utility",
     filename: __filename,
@@ -53,8 +54,8 @@ cmd(
 
       // Create the sticker from the media
       const sticker = new Sticker(media, {
-        pack: "𝐑_𝐎_𝐁_𝐈_𝐍", // Sticker pack name
-        author: "𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋", // Sticker author name
+        pack: "CYBER-X AI", // Sticker pack name
+        author: "C_Y_B_E_R", // Sticker author name
         type: StickerTypes.FULL, // Sticker type (FULL or CROPPED)
         quality: 50, // Quality of the output sticker (0–100)
       });
