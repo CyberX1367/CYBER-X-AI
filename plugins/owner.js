@@ -34,7 +34,7 @@ async (robin, mek, m, { quoted, reply, isOwner }) => {
 cmd({
     pattern: "kick",
     alias: ["remove", "ban"],
-    react: "⚠️",
+    react: "💥",
     desc: "Remove a mentioned user from the group.",
     category: "main",
     filename: __filename
@@ -108,7 +108,7 @@ async (robin, mek, m, { from, isGroup, isOwner, reply }) => {
 cmd({
     pattern: "mute",
     alias: ["silence", "lock"],
-    react: "⚠️",
+    react: "🔇",
     desc: "Set group chat to admin-only messages.",
     category: "main",
     filename: __filename
@@ -206,7 +206,7 @@ async (robin, mek, m, { from, isGroup, isAdmins, isBotAdmins, reply, args }) => 
 cmd({
     pattern: "demote",
     alias: ["member"],
-    react: "⚠️",
+    react: "😡",
     desc: "Remove admin privileges from a mentioned user.",
     category: "main",
     filename: __filename
