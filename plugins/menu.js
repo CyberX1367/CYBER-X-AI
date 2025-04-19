@@ -4,7 +4,8 @@ const { cmd, commands } = require("../command");
 cmd(
   {
     pattern: "menu",
-    alise: ["getmenu","cmdlist"],
+    alias: ["getmenu","cmdlist"],
+    react; ["📃"],
     desc: "get cmd list",
     category: "main",
     filename: __filename,
