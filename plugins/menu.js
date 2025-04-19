@@ -1,11 +1,11 @@
-const { readEnv } = require("../lib/database");
 const { cmd, commands } = require("../command");
+const config = require('../config');
 
 cmd(
   {
     pattern: "menu",
     alias: ["getmenu","cmdlist"],
-    react; "📃",
+    react: "📃",
     desc: "get cmd list",
     category: "main",
     filename: __filename,
@@ -40,7 +40,6 @@ cmd(
     }
   ) => {
     try {
-      const config = await readEnv();
       let menu = {
         main: "",
         download: "",
