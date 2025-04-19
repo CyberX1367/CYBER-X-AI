@@ -5,7 +5,7 @@ cmd(
   {
     pattern: "menu",
     alias: ["getmenu","cmdlist"],
-    react; ["📃"],
+    react; "📃",
     desc: "get cmd list",
     category: "main",
     filename: __filename,
