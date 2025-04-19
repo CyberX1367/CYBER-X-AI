@@ -8,4 +8,5 @@ function convertToBool(text, fault = "true") {
 module.exports = {
   SESSION_ID: process.env.SESSION_ID || "WNtTQJxB#q4fNOED2bY4m5kbolgqMDtzl654SU-kmTPk2hmsno8k",
   OWNER_NUM: process.env.OWNER_NUM || "94750915633",
+  PREFIX: process.env.PREFIX || ".",
 };
