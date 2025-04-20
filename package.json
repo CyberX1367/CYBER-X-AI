@@ -29,6 +29,7 @@
     "canvas": "^3.0.1",
     "@vreden/youtube_scraper": "^1.2.4",
     "wa-sticker-formatter": "^4.4.4",
-    "gtts": "^0.2.1"
+    "gtts": "^0.2.1",
+    "@vitalets/google-translate-api": "^9.2.1"
   }
 }
