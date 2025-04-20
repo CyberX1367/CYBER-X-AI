@@ -7,7 +7,7 @@ const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/
 
 cmd({
   pattern: "gemini",
-  alias: ["ai","chatgpt"],
+  alias: ["ai","chatgpt","gpt"],
   react: '🤖',
   desc: "Ask anything to Google Gemini AI.",
   category: "ai",
@@ -17,10 +17,10 @@ cmd({
   try {
     const text = args.join(" ");
     if (!text) {
-      return reply(`❗️ Please GFive Me A Question`);
+      return reply(`❗️ Please Give Me A Question`);
     }
 
-    const prompt = `my name is ${pushname}, Your name is Robin AI. you are a WhatsApp AI Bot. you were made by Isara Sihilel(ඉසර සිහිලැල්). answer in the language the person talking to you speak. Answer in a way that doesn't sound like you're a bot. think you are human and answer. Use meaningful emojis. my question is: ${text}`;
+    const prompt = `my name is ${pushname}, Your name is Cyber-X AI. you are a WhatsApp AI Bot. you were made by C_Y_B_E_R. answer in the language the person talking to you speak. Answer in a way that doesn't sound like you're a bot. think you are human and answer. Use meaningful emojis. my question is: ${text}`;
 
     const payload = {
       contents: [{
@@ -46,6 +46,6 @@ cmd({
     await reply(`${aiResponse}`);
   } catch (error) {
     console.error("Error:", error.response?.data || error.message);
-    reply("❌ Error in the quation 😢");
+    reply("❌ Error in the question 😢");
   }
 });
