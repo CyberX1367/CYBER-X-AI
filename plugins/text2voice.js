@@ -1,13 +1,11 @@
 const { cmd } = require("../command");
-const gtts = require("node-gtts")("en"); // Default language: English
-const fs = require("fs");
-const path = require("path");
+const googleTTS = require("google-tts-api");
+const axios = require("axios");
 
 cmd(
   {
-    pattern: "ttv",
+    pattern: "tts",
     alias: ["say", "speak"],
-    react: "🗣️",
     desc: "Convert text to speech",
     category: "utility",
     filename: __filename,
@@ -18,23 +16,38 @@ cmd(
     m,
     {
       from,
-      q, // text input
+      body,
+      q,
       reply,
     }
   ) => {
     try {
-      if (!q) return reply("Please provide some text to convert to voice.");
+      const text = q || body.replace(/^([.!/]tts|say|speak)\s+/, "");
+      if (!text) return reply("Please provide some text to convert to speech.");
 
-      const filePath = path.join(__dirname, "voice.mp3");
+      // Max character limit for Google TTS API
+      if (text.length > 200) return reply("Please limit the text to 200 characters.");
 
-      gtts.save(filePath, q, async () => {
-        const audio = fs.readFileSync(filePath);
-        await robin.sendMessage(from, { audio: audio, mimetype: "audio/mp4", ptt: true }, { quoted: mek });
-        fs.unlinkSync(filePath); // Clean up
+      // Generate the audio URL
+      const url = googleTTS.getAudioUrl(text, {
+        lang: "en",
+        slow: false,
+        host: "https://translate.google.com",
       });
-    } catch (e) {
-      console.error(e);
-      reply("An error occurred while converting text to voice.");
+
+      // Download the audio as buffer
+      const { data } = await axios.get(url, { responseType: "arraybuffer" });
+
+      // Send audio as voice note
+      await robin.sendMessage(from, {
+        audio: Buffer.from(data),
+        mimetype: "audio/mp4",
+        ptt: true, // true to send as voice note
+      }, { quoted: mek });
+
+    } catch (err) {
+      console.error(err);
+      reply(`Error: ${err.message || err}`);
     }
   }
 );
