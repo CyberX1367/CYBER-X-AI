@@ -4,9 +4,9 @@ const translate = require("@vitalets/google-translate-api");
 cmd(
   {
     pattern: "tr",
-    alias: ["translate", "tl"],
+    alias: ["translate"],
     react: "🌐",
-    desc: "Translate text to a target language",
+    desc: "Translate text to a specific language",
     category: "utility",
     filename: __filename,
   },
@@ -16,26 +16,41 @@ cmd(
     m,
     {
       from,
+      quoted,
       args,
       q,
       reply,
     }
   ) => {
     try {
-      if (args.length < 2) {
-        return reply("Usage: .tr <language_code> <text>\nExample: .tr hi Hello, how are you?");
+      if (!q && !quoted) {
+        return reply("❌ Please provide text or reply to a message to translate.\nExample: `.tr en`");
       }
 
-      const lang = args[0]; // target language code
-      const text = args.slice(1).join(" ");
+      const lang = args[0]; // Language code like 'en', 'hi', 'fr'
+      const text =
+        q && args.length > 1
+          ? args.slice(1).join(" ")
+          : quoted
+          ? quoted.text
+          : "";
 
-      const res = await translate(text, { to: lang });
+      if (!lang) {
+        return reply("❌ Please specify the target language code.\nExample: `.tr en`");
+      }
 
-      const responseMessage = `🔤 Translated to *${lang}*:\n${res.text}`;
-      reply(responseMessage);
-    } catch (err) {
-      console.error(err);
-      reply("❌ Failed to translate. Make sure the language code is correct.");
+      if (!text) {
+        return reply("❌ No text found to translate.");
+      }
+
+      const result = await translate(text, { to: lang });
+
+      await reply(
+        `🌐 *Translated to ${lang.toUpperCase()}*:\n\n${result.text}`
+      );
+    } catch (e) {
+      console.error(e);
+      reply(`Error: ${e.message || e}`);
     }
   }
 );
