@@ -17,4 +17,5 @@ module.exports = {
   AUTO_STICKER: process.env.AUTO_STICKER || "true",
   AUTO_REPLY: process.env.AUTO_REPLY || "true",
   GEMINI_API_KEY: process.env.GEMINI_API_KEY || "AIzaSyCV3Uj1i9IMWiXFzLNuLvMPmdQwKCaYaHA",
+  MOVIE_API_KEY: process.env.MOVIE_API_KEY || "sky|f43fef57541d6e71531b6484ce18d7083a842620",
 };
