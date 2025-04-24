@@ -67,7 +67,7 @@ cmd(
 
 𝐌𝐚𝐝𝐞 𝐛𝐲 *C_Y_B_E_R*
 
->CYBER-X AI
+> CYBER-X AI
         `;
       await robin.sendMessage(
         from,
