@@ -5,7 +5,7 @@ cmd(
   {
     pattern: "tr",
     alias: ["translate"],
-    react: "🌐","🗺️",
+    react: "🌐",
     desc: "Translate text to the specified language",
     category: "utility",
     usage: ".tr <language_code> <text>",
