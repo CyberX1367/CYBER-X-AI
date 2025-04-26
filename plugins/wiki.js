@@ -60,7 +60,8 @@ ${summary}
 *Read more*: https://en.wikipedia.org/wiki/${encodeURIComponent(title.replace(/ /g, '_'))}
 
 𝐌𝐚𝐝𝐞 𝐛𝐲 *C_Y_B_E_R*
->CYBER-X AI
+
+> CYBER-X AI
 `;
         
         // Send with image if available
