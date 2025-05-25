@@ -60,28 +60,32 @@ cmd(
       let madeMenu = `👋 *Hello  ${pushname}*
 
 ___________________________________________
-| *MAIN COMMANDS* |
+| *MAIN COMMANDS*     |
     ▫️.alive
     ▫️.menu
-    ▫️.ai <text>
     ▫️.system
     ▫️.owner
 | *DOWNLOAD COMMANDS* |
     ▫️.song <text>
     ▫️.video <text>
     ▫️.fb <link>
-| *GROUP COMMANDS* |
+| *GROUP COMMANDS*    |
 ${menu.group}
-| *OWNER COMMANDS* |
+| *OWNER COMMANDS*    |
     ▫️.restart
     ▫️.update
-| *CONVERT COMMANDS* |
+| *CONVERT COMMANDS*  |
     ▫️.sticker <reply img>
-    ▫️.img <reply sticker>
     ▫️.tr <lang><text>
     ▫️.tts <text>
-| *SEARCH COMMANDS* |
+    ▫️.toimg <reply image>
+    ▫️.ttp <text>
+| *SEARCH COMMANDS*   |
 ${menu.search}
+    ▫️.weather <place>
+| *AI COMMANDS*       |
+    ▫️.ai <text>
+    ▫️.aimg <text>
 
 
 😎𝐌𝐚𝐝𝐞 𝐛𝐲 C_Y_B_E_R😎
